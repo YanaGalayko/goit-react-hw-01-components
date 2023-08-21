@@ -6,12 +6,14 @@ import user from "data/user.json";
 import data from "data/data.json"
 import friends from "data/friends.json";
 import transactions from "data/transactions.json";
+import { GlobalStyle } from "./TransactionHistory/GlobalStyle";
+import { Layout } from "./TransactionHistory/Layout";
 
 
 
 export const App = () => {
   return (
-      <div>
+      <Layout>
         <Profile
       username={user.username}
       tag={user.tag}
@@ -21,6 +23,7 @@ export const App = () => {
         <Statistics title="Upload stats" stats={data} />
         <FriendList friends={friends}/>
         <TransactionHistory items={transactions}/>
-    </div>
+        <GlobalStyle/>
+    </Layout>
   );
 };
